@@ -12,22 +12,22 @@ class Page
 		"data"=>[]
 	];
 
-    public function __construct($opts = [])
+    public function __construct($opts = [], $tpl_dir = "/views/")
     {
     	$this->options = array_merge($this->defaults, $opts);
 
     	$config = array(
-			"tpl_dir"       => $_SERVER["DOCUMENT_ROOT"]."/views/",
-			"cache_dir"     => $_SERVER["DOCUMENT_ROOT"]."/views-cache/",
+			"tpl_dir"       => $_SERVER["DOCUMENT_ROOT"].$tpl_dir,
+			"cache_dir"     => $_SERVER["DOCUMENT_ROOT"]."/view-cache/",
 			"debug"         => false // set to false to improve the speed
-		);
-		Tpl::configure( $config );
+			);
+			Tpl::configure( $config );
 
-		$this->tpl = new Tpl;
+			$this->tpl = new Tpl;
 
-		$this->setData($this->options);
+			$this->setData($this->options);
 
-		$this->tpl->draw("header");
+			$this->tpl->draw("header");
 
     }
 
