@@ -1,4 +1,4 @@
+.gitignore
 /httpd-vhosts.conf
 /hosts
-/views-cache/*
-/view-cache/*
+/views-cache/
