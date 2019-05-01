@@ -196,7 +196,7 @@ class User extends Model
     {
         $result = base64_decode($result);
         $code = mb_substr($result, openssl_cipher_iv_length('aes-256-cbc'), null, '8bit');
-        $iv = mb_substr($result, 0, openssl_cipher_iv_length('aes-256-cbc'), '8bit');;
+        $iv = mb_substr($result, 0, openssl_cipher_iv_length('aes-256-cbc'), '8bit');
         $idrecovery = openssl_decrypt($code, 'aes-256-cbc', User::SECRET, 0, $iv);
         $sql = new Sql();
         $results = $sql->select("
