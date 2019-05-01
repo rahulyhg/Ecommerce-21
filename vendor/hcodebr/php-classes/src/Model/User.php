@@ -210,10 +210,11 @@ class User extends Model
          a.dtrecovery IS NULL
          AND
          DATE_ADD(a.dtregister, INTERVAL 1 HOUR) >= NOW();
-         ", array(
+         ",
+         [
             ":idrecovery" => $idrecovery
-        ));
-        var_dump($results[0]);
+         ]
+        );
         if (count($results) === 0) {
             throw new \Exception("Não foi possível recuperar a senha.");
         } else {
