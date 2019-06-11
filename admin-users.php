@@ -3,7 +3,7 @@
 use \Hcode\PageAdmin;
 use \Hcode\Model\User;
 
-$app->get("/admin/users", function() {
+$app->get("/admin", function() {
 	User::verifyLogin();
 
 	$users = User::listAll();
