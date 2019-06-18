@@ -45,7 +45,7 @@ class User extends Model
                 
                 return true;
 
-            } else if ($inadmin = false) {
+            } else if ($inadmin === false) {
 
                 return true;
                 

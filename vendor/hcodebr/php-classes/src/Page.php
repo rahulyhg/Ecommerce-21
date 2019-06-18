@@ -23,13 +23,13 @@ class Page
          "cache_dir"     => $_SERVER["DOCUMENT_ROOT"]."/views-cache/",
          "debug"         => false
         );
-        Tpl::configure( $config );
+      Tpl::configure( $config );
 
-        $this->tpl = new Tpl;
+      $this->tpl = new Tpl();
 
-		$this->setData($this->options);
+      $this->setData($this->options);
 
-		if ($this->options["header"]) $this->tpl->draw("header");
+      if ($this->options["header"]) $this->tpl->draw("header");
 
     }
 
