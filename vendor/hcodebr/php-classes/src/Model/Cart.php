@@ -52,6 +52,7 @@ class Cart extends Model
   {
 
     $_SESSION[Cart::SESSION] = $this->getValues();
+    
   }
 
   public function getFromSessionID()
@@ -59,7 +60,7 @@ class Cart extends Model
 
     $sql = new Sql();
 
-    $results = $sql->select("SELECT * tb_carts WHERE dessessionid = :dessessionid", [
+    $results = $sql->select("SELECT * FROM tb_carts WHERE dessessionid = :dessessionid", [
       ":dessessionid" => session_id()
     ]);
 
@@ -73,7 +74,7 @@ class Cart extends Model
 
     $sql = new Sql();
 
-    $results = $sql->select("SELECT * tb_carts WHERE idcart = :idcart", [
+    $results = $sql->select("SELECT * FROM tb_carts WHERE idcart = :idcart", [
       ":idcart" => $idcart
     ]);
 
