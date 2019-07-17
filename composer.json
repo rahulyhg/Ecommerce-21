@@ -1,5 +1,5 @@
 {
-    "name": "maykowvictor/Ecommerce",
+    "name": "maykowvictor/ecommerce",
     "authors": [
         {
             "name": "maykowvictor",
@@ -9,7 +9,8 @@
     "require": {
     	"phpmailer/phpmailer":"5.2.22",
     	"slim/slim":"2.0",
-    	"rain/raintpl":"3.0.0"
+    	"rain/raintpl":"3.0.0",
+        "flyingluscas/correios-php": "^2.3"
     },
     "autoload": {
         "psr-4": {
